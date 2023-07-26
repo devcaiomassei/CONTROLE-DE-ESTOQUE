@@ -1,6 +1,3 @@
-# Varejonline - Projeto #
-Projeto avaliativo para novos colaboradores.
-
 ## Iniciando ##
 O projeto consiste no desenvolvimento de um pequeno sistema de Controle de Estoque com os seguintes requisitos:
 
@@ -49,14 +46,4 @@ O projeto consiste no desenvolvimento de um pequeno sistema de Controle de Estoq
     * _Documento_
     * _Motivo_
     * _Saldo_: Calculado considerando (Saldo Inicial + Entradas + Ajustes de Entrada - Saídas - Ajustes de Saída);
-    * _Situação_: Caso o produto tiver valor para o campo _Quantidade Mínima_, e o _Saldo_ for inferior a ele, mostrar _Inferior ao Mínimo_ do contrário, mostrar _Ok_;
-
-
-## Estrutura do Projeto ##
-Dentro desse repositório pode-se encontrar 2 projetos, o ```frontend``` e o ```server```, sendo eles:
-* ```frontend```: Projeto em **Angular** que deve conter todas a camada de apresentação do projeto (telas, formatações...).
-  * A inicialização do projeto é feito pelo comando ```npm install``` onde será feito o download das dependências. (**Obs.:** Necessário ter o _Angular CLI - 12.2.17^_).
-  * A execução do projeto é feita pelo comando ```npm start``` que rodará o projeto na porta ```4200```.
-  * Todas as chamadas serão feitas para o server através da porta ```8081``` já configurada no ```proxy-config.json```. Essa configuração faz com que toda a requisição para ```/server/...``` seja redirecionado para o server.     
-* ```server```: Projeto em **Java - Spring Boot** que deve conter todas as regras de negócio da aplicação, incluindo as regras de segurança de acesso.
-
+    * _Situação_: Caso o produto tiver valor para o campo _Quantidade Mínima_, e o _Saldo_ for inferior a ele, mostrar _Inferior ao Mínimo_ do contrário, mostrar _Ok_ 
