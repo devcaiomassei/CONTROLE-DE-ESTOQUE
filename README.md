@@ -1,37 +1,36 @@
 ## Iniciando ##
-O projeto consiste no desenvolvimento de um pequeno sistema de Controle de Estoque com os seguintes requisitos:
+Sistema de Controle de Estoque foi desenvolvido. Utilizei os seguintes requisitos:
 
-### Requisitos não funcionais ###
-* Utilizar o BD H2 do Spring Boot;
-* Todos os dados necessários para a execução e utilização do projeto deverão ser enviados junto com o código feito;
-* Deverá ser utilizado o Spring Security para controle de acesso;
+### Utilizei os seguintes requisitos###
+* Utilizei o BD H2 do Spring Boot;
+* Todos os dados necessários para a execução e utilização do projeto serão enviados junto com o código feito;
+* Spring Security para controle de acesso;
 
 
 ### Requisitos funcionais ###
-* **1-** Deverão existir 2 perfis de usuários para o acesso as funcionalidades: _OPERADOR_, _GERENTE_.
-* **2-** O sistema deverá ter uma tela para permitir o cadastro e edição de produtos com os seguintes campos ( somente _GERENTE_ ):
-  * _Id_: Deverá ser um sequencial único, mostrado somente em modo de edição sem permitir sua alteração;
-  * _Código de barras_: Código de barras do produto, sendo um campo do tipo literal. Não poderá exisitr mais de um produto com o mesmo código de barras;
+* **1-** O sistema uma tela para permitir o cadastro e edição de produtos com os seguintes campos :
+  * _Id_: tem um sequencial único, mostrado somente em modo de edição sem permitir sua alteração;
+  * _Código de barras_: Código de barras do produto, sendo um campo do tipo literal. Não existe mais de um produto com o mesmo código de barras;
   * _Nome_: Nome do produto, sendo um campo do tipo literal;
   * _Quantidade mínima_: Quantidade mínima do produto em estoque, sendo um campo do tipo numérico;
   * _Saldo inicial_: Saldo inicial do produto no momento do cadastro, sendo um campo do tipo numérico;
-    * Não será possível sua alteração após o cadastro; 
-    * Ao cadastrar um valor superior a 0, uma movimentação de _SALDO_INICIAL_ deverá ser criada para o produto;
+    * Não é possível sua alteração após o cadastro; 
+    * Ao cadastrar um valor superior a 0, uma movimentação de _SALDO_INICIAL_ sera criada para o produto;
     * O _Saldo inicial_ não poderá ser inferior a _quantidade mínima_
-* **3-** O sistema deverá ter uma tela para permitir o lançamento das movimentações de estoque com os seguintes campos (_GERENTE_ e _OPERADOR_):
+* **2-** O sistema tem uma tela para permitir o lançamento das movimentações de estoque:
   * _Produto_: Campo para permitir informar/selecionar um produto previamente cadastrado;
   * _Tipo de Movimento_: Os tipos de movimentação possíveis são: _ENTRADA_, _SAÍDA_, _SALDO_INICIAL_, _AJUSTE_ENTRADA_ e _AJUSTE_SAÍDA_; 
     * Somente o _GERENTE_ pode realizar lançamentos do tipo _SALDO_INICIAL_ e _AJUSTE_; 
-    * Deverá existir no máximo 1 lançamento do tipo _SALDO_INICIAL_ por produto;
-    * O lançamento de _SALDO_INICIAL_ somente poderá ser realizado se não existirem outros lançamentos para o produto;
-    * O lançamento de _AJUSTE_ somente poderá ser realizado quando existirem outros lançamentos para o produto;
+    * existe no máximo 1 lançamento do tipo _SALDO_INICIAL_ por produto;
+    * O lançamento de _SALDO_INICIAL_ somente pode ser realizado se não existirem outros lançamentos para o produto;
+    * O lançamento de _AJUSTE_ somente podevser realizado quando existirem outros lançamentos para o produto;
   * _Quantidade_: Quantidade a ser movimentada no estoque. 
-    * O sistema não poderá permitir lançamentos em que o saldo do produto se torne negativo;
+    * O sistema não pode permitir lançamentos em que o saldo do produto se torne negativo;
   * _Data_: Data da movimentação.
-    * Não poderá ter movimentação para um determinado produto anterior a sua criação;
+    * Não pode ter movimentação para um determinado produto anterior a sua criação;
   * _Motivo_: Motivo da Movimentação
   * _Documento_: Documento vinculado a movimentação, mostrar somente quando a movimentação for do tipo _ENTRADA_ ou _SAÍDA_;
-* **4-** O sistema deverá ter uma tela para listar as movimentações de estoque com os seguintes campos:
+* **3-** O sistema tem uma tela para listar as movimentações de estoque com os seguintes campos:
   * Filtros:
     * _Produto_: Permitir filtrar os lançamentos por produto;
     * _Período_: Permitir filtrar os lançamentos de um determinado período;
